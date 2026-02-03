@@ -9,14 +9,28 @@
 /* Layout */
 
 html, body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Inter", "Segoe UI", "SF Pro Text", "Roboto", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   padding: 0;
   margin: 0;
 }
 
+:root {
+  --sp-bg: #0b0d12;
+  --sp-surface: #151922;
+  --sp-surface-elevated: #1c2230;
+  --sp-text: #e6e9ef;
+  --sp-muted: #9aa3b2;
+  --sp-border: #2b3242;
+  --sp-accent: #7c5cff;
+  --sp-accent-strong: #9a86ff;
+  --sp-warning: #f5c46b;
+}
+
 body {
   min-width: 12em;
+  background-color: var(--sp-bg);
+  color: var(--sp-text);
 }
 
 .om-hidden {
@@ -43,41 +57,41 @@ body {
     .om-nav-item > a {
       display: block;
       padding: 5px 25px 5px 8px;
-      border-radius: 4px;
+      border-radius: 8px;
       line-height: 1.5em;
       font-size: 1em;
-      color: #337ab7;
+      color: var(--sp-text);
       text-decoration: none;
       white-space: nowrap;
       cursor: pointer;
     }
     .om-nav-item > a:hover {
       text-decoration: none;
-      background-color: #eee;
+      background-color: rgba(124, 92, 255, 0.15);
     }
     .om-nav-item > a:hover {
-      color: #23527c;
+      color: var(--sp-accent-strong);
     }
     .om-nav-item.om-effective > a {
-      background-color: #d9edf7;
+      background-color: rgba(124, 92, 255, 0.2);
     }
     .om-nav-item.om-active > a {
       color: #fff;
-      background-color: #337ab7;
+      background: linear-gradient(135deg, #6b4eff, #9a86ff);
     }
 
   .om-divider {
     height: 1px;
     overflow: hidden;
-    background-color: #E5E5E5;
+    background-color: var(--sp-border);
   }
 
   .om-reqinfo {
-    background-color: #fcf8e3;
+    background-color: rgba(245, 196, 107, 0.12);
   }
 
   .glyphicon-warning-sign {
-    color: #8a6d3b;
+    color: var(--sp-warning);
   }
 
 /* Dropdown */
@@ -87,9 +101,10 @@ body {
   list-style: none;
   padding: 5px 0;
   margin: 0 5px !important;
-  border: 1px solid rgba(0,0,0,.15);
-  border-radius: 4px;
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  background-color: var(--sp-surface-elevated);
+  border: 1px solid var(--sp-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .om-open .om-dropdown {
